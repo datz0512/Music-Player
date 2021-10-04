@@ -107,6 +107,10 @@ header h2 {
     background-color: var(--primary-color);
 }
 
+.icon-play{
+    margin-left: 3px;
+}
+
 .progress {
     width: 100%;
     -webkit-appearance: none;

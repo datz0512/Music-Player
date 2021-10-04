@@ -285,7 +285,6 @@ const app = {
         this.handleEvents()
         this.loadCurrentSong()
         this.render()
-        
     }
 }
 app.start();
