@@ -126,11 +126,11 @@ header h2 {
 .progress::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 10px;
+    width: 45px;
+    height: 15px;
     background-color: var(--primary-color);
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 /* PLAYLIST */
