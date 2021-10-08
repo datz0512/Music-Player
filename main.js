@@ -236,7 +236,7 @@ const app = {
             repeatBtn.classList.toggle('active', app.isRepeat)
             app.setConfig('isRepeat', app.isRepeat)
         }
-        audio.onended = function(){
+        audio.onended = function(){  
             if(app.isRepeat){
                 audio.play()
             }else{
