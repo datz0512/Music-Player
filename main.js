@@ -126,7 +126,7 @@ const app = {
     ],
     setConfig: function(key, value){
         this.config[key] = value
-        localStorage.setItem(PLAYER_STORAGE_KEY2, JSON.stringify(this.config))
+        localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config))
     },
     render: function() {
         const htmls = this.songs.map((song, index) => {
@@ -146,7 +146,6 @@ const app = {
             `
         })
         playlist.innerHTML = htmls.join('')
-        plauList.innerHTML = htmls.join('')
     },
 
     defineProperties: function() {
