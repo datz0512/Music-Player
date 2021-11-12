@@ -1,8 +1,6 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-
 const PLAYER_STORAGE_KEY = 'F8_PLAYER'
-
 const heading = $('header h2')
 const cdThumb = $('.cd-thumb')
 const audio = $('#audio')
@@ -128,11 +126,11 @@ const app = {
     ],
     setConfig: function(key, value){
         this.config[key] = value
-        localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config))
+        localStorage.setItem(PLAYER_STORAGE_KEY2, JSON.stringify(this.config))
     },
     render: function() {
         const htmls = this.songs.map((song, index) => {
-            return `
+            return ` 
                 <div class="song ${index === this.currentIndex ? 'active' : ''}" data-index="${index}">
                     <div class="thumb" 
                         style="background-image: url('${song.image}')">
@@ -148,6 +146,7 @@ const app = {
             `
         })
         playlist.innerHTML = htmls.join('')
+        plauList.innerHTML = htmls.join('')
     },
 
     defineProperties: function() {
@@ -202,7 +201,7 @@ const app = {
             audio.currentTime = seekTime;
             progress.onmouseup = function(){             
                 setTimeout(() => {
-                  audio.play();
+                    audio.play();
                 }, 300);
             }
         }
@@ -234,7 +233,7 @@ const app = {
         repeatBtn.onclick = function(e){
             app.isRepeat = !app.isRepeat
             repeatBtn.classList.toggle('active', app.isRepeat)
-            app.setConfig('isRepeat', app.isRepeat)
+            app.setConfig('isrepeat', app.isRepeat)
         }
         audio.onended = function(){  
             if(app.isRepeat){
@@ -250,7 +249,7 @@ const app = {
                     app.currentIndex = Number(songNode.dataset.index)
                     app.loadCurrentSong()
                     app.render()
-                    audio.play();       
+                    audio.play();      
                 }
                 if(e.target.closest('.option')){
 
